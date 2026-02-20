@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.13.5 on win32)" generated="2026-02-20T11:01:45.636990" rpa="false" schemaversion="5">
+<suite id="s1" name="Robot cart" source="C:\Users\MeszarosGergo\Desktop\Robot_cart">
+<suite id="s1-s1" name="Cart2" source="C:\Users\MeszarosGergo\Desktop\Robot_cart\cart2.robot">
+<test id="s1-s1-t1" name="Test cart" line="5">
+<kw name="Successful login">
+<kw name="Open Browser" owner="Selenium2Library">
+<msg time="2026-02-20T11:01:45.819500" level="INFO">Opening browser 'firefox' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>https://www.saucedemo.com/</arg>
+<arg>firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-20T11:01:45.819194" elapsed="5.781439"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2026-02-20T11:01:51.601320" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>locator=id=user-name</arg>
+<arg>text=standard_user</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-20T11:01:51.600894" elapsed="0.051156"/>
+</kw>
+<kw name="Input Password" owner="Selenium2Library">
+<msg time="2026-02-20T11:01:51.652517" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg time="2026-02-20T11:01:51.656647" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>locator=id=password</arg>
+<arg>password=secret_sauce</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-20T11:01:51.652243" elapsed="0.017374"/>
+</kw>
+<kw name="Click Button" owner="Selenium2Library">
+<msg time="2026-02-20T11:01:51.670045" level="INFO">Clicking button '//*[@id="login-button"]'.</msg>
+<arg>//*[@id="login-button"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-20T11:01:51.669796" elapsed="0.094320"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-20T11:01:54.764999" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-20T11:01:51.764289" elapsed="3.001461"/>
+</kw>
+<status status="PASS" start="2026-02-20T11:01:45.818418" elapsed="8.947874"/>
+</kw>
+<kw name="Add items to cart">
+<kw name="Click Button" owner="Selenium2Library">
+<msg time="2026-02-20T11:01:54.769166" level="INFO">Clicking button '//*[@id="add-to-cart-sauce-labs-backpack"]'.</msg>
+<arg>//*[@id="add-to-cart-sauce-labs-backpack"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-20T11:01:54.768591" elapsed="0.079620"/>
+</kw>
+<kw name="Click Button" owner="Selenium2Library">
+<msg time="2026-02-20T11:01:54.849028" level="INFO">Clicking button '//*[@id="add-to-cart-sauce-labs-bike-light"]'.</msg>
+<arg>//*[@id="add-to-cart-sauce-labs-bike-light"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-20T11:01:54.848581" elapsed="0.076899"/>
+</kw>
+<kw name="Click Button" owner="Selenium2Library">
+<msg time="2026-02-20T11:01:54.926753" level="INFO">Clicking button '//*[@id="add-to-cart-sauce-labs-bolt-t-shirt"]'.</msg>
+<arg>//*[@id="add-to-cart-sauce-labs-bolt-t-shirt"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-20T11:01:54.925898" elapsed="0.077481"/>
+</kw>
+<kw name="Element Should Contain" owner="Selenium2Library">
+<msg time="2026-02-20T11:01:55.016087" level="INFO">Element 'class:shopping_cart_badge' contains text '3'.</msg>
+<arg>class:shopping_cart_badge</arg>
+<arg>3</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2026-02-20T11:01:55.003890" elapsed="0.012534"/>
+</kw>
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2026-02-20T11:01:55.016876" level="INFO">Clicking element '//*[@id="shopping_cart_container"]'.</msg>
+<arg>//*[@id="shopping_cart_container"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-20T11:01:55.016602" elapsed="0.065207"/>
+</kw>
+<status status="PASS" start="2026-02-20T11:01:54.767265" elapsed="0.314806"/>
+</kw>
+<kw name="Check the number of elements">
+<kw name="Get Element Count" owner="Selenium2Library">
+<msg time="2026-02-20T11:01:55.085372" level="INFO">${count_items} = 3</msg>
+<var>${count_items}</var>
+<arg>class:cart_item</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2026-02-20T11:01:55.082924" elapsed="0.002653"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2026-02-20T11:01:55.086408" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${count_items}</arg>
+<arg>${expected_counts}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2026-02-20T11:01:55.085779" elapsed="0.000850"/>
+</kw>
+<arg>3</arg>
+<status status="PASS" start="2026-02-20T11:01:55.082529" elapsed="0.004242"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-20T11:01:58.087939" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-20T11:01:55.087238" elapsed="3.001248"/>
+</kw>
+<kw name="Close Browser" owner="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-20T11:01:58.088974" elapsed="2.652214"/>
+</kw>
+<status status="PASS" start="2026-02-20T11:01:45.815861" elapsed="14.925679"/>
+</test>
+<status status="PASS" start="2026-02-20T11:01:45.671862" elapsed="15.073743"/>
+</suite>
+<status status="PASS" start="2026-02-20T11:01:45.641165" elapsed="15.106832"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Robot cart" id="s1" pass="1" fail="0" skip="0">Robot cart</stat>
+<stat name="Cart2" id="s1-s1" pass="1" fail="0" skip="0">Robot cart.Cart2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
